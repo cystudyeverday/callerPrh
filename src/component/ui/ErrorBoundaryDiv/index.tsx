@@ -1,38 +1,35 @@
-import './index.styl';
+'use client';
 import { forwardRef } from 'react';
 import useErrorBoundary from "use-error-boundary";
-import { classnames } from 'helpers';
+import classnames from 'clsx';
 
 interface Props {
     direction: "row" | "col";
-    children?: any;
+    children?: React.ReactNode;
     className?: string;
     onClick?: () => any;
-    style?: any;
+    style?: React.CSSProperties;
     hidden?: boolean;
 }
 
-const ErrorBoundaryDiv = forwardRef((props: Props, ref: any) => {
+const ErrorBoundaryDiv = forwardRef<HTMLDivElement, Props>((props, ref) => {
     const { ErrorBoundary, didCatch, error } = useErrorBoundary();
 
-    const fallbackClass = classnames(`boc-flex`, props.direction, {
-        'boundary-error': didCatch,
-    });
-
-    const className = classnames(`boc-flex`, props.direction, {
-        [props.className as string]: typeof props.className === 'string',
-        hidden: props.hidden === true,
-    });
-
-    const fallback = (
-        <div className={fallbackClass}>
-            {String(error)}
-        </div>
+    const fallbackClass = classnames('boc-flex', props.direction, 'boundary-error');
+    const className = classnames(
+        'boc-flex',
+        props.direction,
+        props.className,
+        { hidden: props.hidden }
     );
 
-    return (<>
-        {didCatch ? fallback : (
-            <ErrorBoundary>
+    return (
+        <ErrorBoundary>
+            {didCatch ? (
+                <div className={fallbackClass}>
+                    {String(error)}
+                </div>
+            ) : (
                 <div
                     className={className}
                     onClick={props.onClick}
@@ -41,9 +38,9 @@ const ErrorBoundaryDiv = forwardRef((props: Props, ref: any) => {
                 >
                     {props.children}
                 </div>
-            </ErrorBoundary>
-        )}
-    </>);
+            )}
+        </ErrorBoundary>
+    );
 });
 
 export default ErrorBoundaryDiv;

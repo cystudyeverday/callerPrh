@@ -7,12 +7,13 @@ interface Props {
 }
 const layout = ({ children }: Props) => {
     const headerStyle: React.CSSProperties = {
-        textAlign: 'center',
+        textAlign: 'left',
         color: '#fff',
         height: 64,
         paddingInline: 48,
         lineHeight: '64px',
         backgroundColor: '#4096ff',
+        fontSize: 24
     };
     const contentStyle: React.CSSProperties = {
         textAlign: 'center',
@@ -23,7 +24,7 @@ const layout = ({ children }: Props) => {
     };
     return (
         <Layout >
-            <Header style={headerStyle}>Header</Header>
+            <Header style={headerStyle}>Caller System </Header>
             <Content style={contentStyle} >
                 {children}
             </Content>

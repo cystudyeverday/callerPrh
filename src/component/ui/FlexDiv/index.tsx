@@ -1,7 +1,7 @@
-import './index.styl';
+import './index.css';
 import { forwardRef } from 'react';
 import ErrorBoundaryDiv from '@/component/ui/ErrorBoundaryDiv';
-import { clsx } from '@/helpers';
+import { clsx } from 'clsx';
 
 interface Props {
     direction: "row" | "col";
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const FlexDiv = forwardRef((props: Props, ref: any) => {
-    const className = clsx(`boc-flex`, props.direction, {
+    const className = clsx(`flex-div`, props.direction, {
         [props.className as string]: typeof props.className === 'string',
         hidden: props.hidden,
     });

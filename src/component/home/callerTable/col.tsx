@@ -151,31 +151,33 @@ export const gencols = (data: any) => [
     dataIndex: 'order',
     width: 150
   }, data),
-  {
+  generateColumnConfig({
     title: 'Trigger Times',
     dataIndex: 'triggerTimes',
     sortable: true,
     width: 400,
-    render: (value: any) => value?.join(', ')
-  },
-  {
+    render: (value: any) => value?.join(', '),
+    sorter: false
+  }, data),
+  generateColumnConfig({
     title: 'Target Number',
     dataIndex: 'targetNumber',
-    sortable: true,
+
     width: 200
-  },
-  {
-    title: 'Working Time',
-    dataIndex: 'workingTime',
-    sortable: true,
-    width: 200
-  },
-  {
+  }, data),
+  generateColumnConfig({
     title: 'Finish number',
     dataIndex: 'finishedNumber',
     sortable: true,
     width: 200
-  },
+  }, data),
+  generateColumnConfig(
+    {
+      title: 'Working Time',
+      dataIndex: 'workingTime',
+      sortable: true,
+      width: 200
+    }, data),
   {
     title: 'Warning',
     dataIndex: 'warningInfo',

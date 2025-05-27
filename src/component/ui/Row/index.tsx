@@ -1,4 +1,4 @@
-import FlexDiv from 'components/FlexDiv';
+import FlexDiv from '@/component/ui/FlexDiv';
 
 interface Props {
     children?: any;

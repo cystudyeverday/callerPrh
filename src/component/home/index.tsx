@@ -1,9 +1,14 @@
 import React from 'react'
 import CallerTable from './callerTable';
+import { Col } from '../ui';
+import StatisticsBar from './statisticsBar';
 
 const CallerHome = () => {
   return (
-    <div><CallerTable /></div>
+    <Col className='gap-2'>
+      <StatisticsBar />
+      <CallerTable />
+    </Col>
   );
 }
 
