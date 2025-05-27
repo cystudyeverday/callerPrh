@@ -1,7 +1,7 @@
 'use client';
 import React, { ReactNode } from 'react'
-import { Flex, Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout } from 'antd';
+const { Header, Content } = Layout;
 interface Props {
     children: ReactNode
 }

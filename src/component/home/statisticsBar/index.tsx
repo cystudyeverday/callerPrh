@@ -8,7 +8,7 @@ const StatisticsBar = () => {
     <Row className='h-[100px] gap-2 mt-2'>
       <Card >
         <Statistic
-          title="Total caller"
+          title="总呼叫器数量"
           value={50}
           className='w-[200px]'
         // className='border border-gray-400 rounded'
@@ -16,7 +16,7 @@ const StatisticsBar = () => {
       </Card>
       <Card >
         <Statistic
-          title="Total target "
+          title="总目标数 "
           value={13889}
           className='w-[200px]'
         // className='border border-gray-400 rounded'
@@ -24,7 +24,7 @@ const StatisticsBar = () => {
       </Card>
       <Card >
         <Statistic
-          title="Total finsihed "
+          title="总完成数"
           value={12389}
           className='w-[200px]'
         // className='border border-gray-400 rounded'
@@ -32,7 +32,7 @@ const StatisticsBar = () => {
       </Card>
       <Card >
         <Statistic
-          title="Total rate "
+          title="总完成率 "
           className='w-[200px]'
           value={11.28}
           precision={2}

@@ -44,5 +44,7 @@ const FlexDiv = forwardRef((props: Props, ref: any) => {
         </div>
     );
 });
+FlexDiv.displayName = "FlexDiv";
+
 
 export default FlexDiv;

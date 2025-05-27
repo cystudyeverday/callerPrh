@@ -42,5 +42,5 @@ const ErrorBoundaryDiv = forwardRef<HTMLDivElement, Props>((props, ref) => {
         </ErrorBoundary>
     );
 });
-
+ErrorBoundaryDiv.displayName = 'ErrorBoundaryDiv';
 export default ErrorBoundaryDiv;
